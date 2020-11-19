@@ -15,22 +15,18 @@ public class LoginHandleException extends Exception {
 
 	public LoginHandleException() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public LoginHandleException(String message, Throwable cause) {
 		super(message, cause);
-		// TODO Auto-generated constructor stub
 	}
 
 	public LoginHandleException(String message) {
 		super(message);
-		// TODO Auto-generated constructor stub
 	}
 
 	public LoginHandleException(Throwable cause) {
 		super(cause);
-		// TODO Auto-generated constructor stub
 	}
 
 }

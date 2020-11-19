@@ -1,5 +1,9 @@
 package dream.first.extjs.plugin.login.handler;
 
+import java.util.HashMap;
+
+import org.yelong.commons.util.map.MapWrapper;
+
 import dream.first.core.platform.user.model.User;
 
 /**
@@ -7,17 +11,22 @@ import dream.first.core.platform.user.model.User;
  * 
  * @since 2.0
  */
-public class LoginResult {
+public class LoginResult extends MapWrapper<String, Object> {
 
-	private final boolean result;
+	private boolean result;
 
-	private final User user;
+	private User user;
 
-	private final String authFailMessage;
+	private String authFailMessage;
 
-	private final LoginConfig loginConfig;
+	private LoginConfig loginConfig;
+
+	public LoginResult() {
+		super(new HashMap<>());
+	}
 
 	public LoginResult(boolean result, User user, String authFailMessage, LoginConfig loginConfig) {
+		this();
 		this.result = result;
 		this.user = user;
 		this.authFailMessage = authFailMessage;
@@ -38,6 +47,22 @@ public class LoginResult {
 
 	public LoginConfig getLoginConfig() {
 		return loginConfig;
+	}
+
+	public void setResult(boolean result) {
+		this.result = result;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public void setAuthFailMessage(String authFailMessage) {
+		this.authFailMessage = authFailMessage;
+	}
+
+	public void setLoginConfig(LoginConfig loginConfig) {
+		this.loginConfig = loginConfig;
 	}
 
 }

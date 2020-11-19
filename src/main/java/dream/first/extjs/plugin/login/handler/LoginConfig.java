@@ -7,23 +7,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * 
  * @since 2.0
  */
-public final class LoginConfig {
+public class LoginConfig {
 
 	/**
 	 * 默认登录失败重试次数
 	 */
 	public static final int DEFAULT_MAX_LOGIN_FAIL_RETRY_TIMES = 5;
 
-	private final String username;
+	private String username;
 
-	private final String password;
+	private String password;
 
-	private final HttpServletRequest request;
+	private HttpServletRequest request;
 
-	private final HttpServletResponse response;
+	private HttpServletResponse response;
 
 	private int maxLoginFailRetryTimes = DEFAULT_MAX_LOGIN_FAIL_RETRY_TIMES;
 
@@ -56,6 +55,22 @@ public final class LoginConfig {
 
 	public void setMaxLoginFailRetryTimes(int maxLoginFailRetryTimes) {
 		this.maxLoginFailRetryTimes = maxLoginFailRetryTimes;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public void setRequest(HttpServletRequest request) {
+		this.request = request;
+	}
+
+	public void setResponse(HttpServletResponse response) {
+		this.response = response;
 	}
 
 }

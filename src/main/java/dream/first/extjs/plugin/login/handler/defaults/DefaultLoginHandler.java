@@ -1,30 +1,30 @@
-package dream.first.extjs.plugin.login.handler.impl;
+package dream.first.extjs.plugin.login.handler.defaults;
 
 import javax.annotation.Resource;
 
 import org.apache.commons.lang3.StringUtils;
+import org.yelong.core.model.service.SqlModelService;
 
 import com.labbol.cocoon.core.utils.security.coder.JSDesCoder;
 
-import dream.first.core.model.service.DreamFirstModelService;
 import dream.first.core.platform.constants.State;
 import dream.first.core.platform.user.model.User;
 import dream.first.core.platform.user.service.UserCommonService;
+import dream.first.extjs.plugin.login.handler.AbstractLoginHandler;
 import dream.first.extjs.plugin.login.handler.LoginConfig;
 import dream.first.extjs.plugin.login.handler.LoginHandleException;
-import dream.first.extjs.plugin.login.handler.LoginHandler;
 import dream.first.extjs.plugin.login.handler.LoginResult;
 
-public class DefaultLoginHandler implements LoginHandler {
+public class DefaultLoginHandler extends AbstractLoginHandler {
 
 	@Resource
-	private DreamFirstModelService modelService;
+	private SqlModelService modelService;
 
 	@Resource
 	private UserCommonService userCommonSerfvice;
 
 	@Override
-	public LoginResult handle(LoginConfig loginConfig) throws LoginHandleException {
+	public LoginResult doHandle(LoginConfig loginConfig) throws LoginHandleException {
 		User sourceUser = null;
 		boolean result = false;
 		String authFailMessage = "";
